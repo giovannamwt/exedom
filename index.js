@@ -1,8 +1,13 @@
-var nome = prompt("Seu nome")
+var button = document.querySelector('button');
+var tabelaNomes = document.querySelector('#tabela-nomes tbody');
 
-
-
-const p = document.querySelector('p')
-p.textContent = `Seu nome é: ${nome}`
-
-
+button.addEventListener('click', function () {
+    var nome = prompt("Seu nome");
+    if (nome) { 
+        var novaLinha = document.createElement('tr');
+        var novaCelula = document.createElement('td');
+        novaCelula.textContent = nome;
+        novaLinha.appendChild(novaCelula);
+        tabelaNomes.appendChild(novaLinha);
+    }
+});
